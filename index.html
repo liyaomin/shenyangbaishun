@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>沈阳百顺网络科技有限公司 - 专业互联网解决方案</title>
+    <style>
+        :root {
+            --primary-color: #00f2ff;
+            --secondary-color: #0051ff;
+            --bg-dark: #0a0e17;
+            --bg-card: #111625;
+            --text-light: #ffffff;
+            --text-gray: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 30px;
+            width: auto;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(10, 14, 23, 0.8), rgba(10, 14, 23, 0.9)),
+                        url('https://images.unsplash.com/photo-1504384308090-c54be3855833?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #fff, #00f2ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.5);
+        }
+
+        /* Sections General */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* About */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Contact */
+        .contact-wrapper {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .info-icon {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            margin-bottom: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #05080d;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-content p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .about-container { grid-template-columns: 1fr; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <!-- 使用SVG作为简单的Logo图标 -->
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#0051ff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#00f2ff;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+                百顺网络
+            </div>
+            <nav class="nav-links">
+                <a href="#home">首页</a>
+                <a href="#services">核心服务</a>
+                <a href="#about">关于我们</a>
+                <a href="#contact">联系我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>数字驱动未来，科技赋能商业</h1>
+            <p>沈阳百顺网络科技有限公司致力于为企业提供前沿的互联网技术解决方案，助力企业数字化转型，共创智慧未来。</p>
+            <a href="#contact" class="btn btn-primary">立即咨询</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">
+            <span>Our Services</span>
+            <h2>核心业务领域</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>高端网站定制</h3>
+                <p>从品牌官网到大型门户，我们提供全方位的网站设计与开发服务，注重用户体验与交互细节。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>移动应用开发</h3>
+                <p>iOS、Android原生开发及混合开发，打造流畅的移动端体验，覆盖全场景用户需求。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h3>云服务与大数据</h3>
+                <p>提供企业级云架构部署、数据分析与可视化大屏展示，挖掘数据价值。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>网络安全运维</h3>
+                <p>全天候系统监控与安全防护，保障企业数据资产安全，提供稳定的运维支持。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="团队协作">
+            </div>
+            <div class="about-text">
+                <div class="section-title" style="text-align: left; margin-bottom: 2rem;">
+                    <span>About Us</span>
+                    <h2>关于百顺网络</h2>
+                </div>
+                <p>沈阳百顺网络科技有限公司（简称百顺网络）是一家专注于互联网技术研发与创新的高科技企业。我们拥有一支充满激情与创造力的技术团队，深耕行业多年。</p>
+                <p>我们始终坚持"技术为本，服务至上"的理念，通过持续的技术创新，为客户提供最具竞争力的数字化解决方案。</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <h4>500+</h4>
+                        <p>服务客户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>50+</h4>
+                        <p>技术专家</p>
+                    </div>
+                    <div class="stat-item">
+                        <h4>98%</h4>
+                        <p>客户好评</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <span>Contact Us</span>
+            <h2>联系我们</h2>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>期待与您的合作</h3>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h4>公司地址</h4>
+                        <p>辽宁省沈阳市浑南区三义街28-4号513室</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📧</div>
+                    <div>
+                        <h4>电子邮箱</h4>
+                        <p>baishun@shenyangbaishun.asia</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h4>联系电话</h4>
+                        <p>13768654942</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="您的姓名" required>
+                <input type="email" placeholder="联系邮箱" required>
+                <input type="tel" placeholder="联系电话">
+                <textarea rows="5" placeholder="需求描述"></textarea>
+                <button type="submit" class="btn btn-primary" style="border:none; cursor:pointer; width:100%;">发送消息</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 沈阳百顺网络科技有限公司 版权所有</p>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 简单的滚动显现效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(10, 14, 23, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 14, 23, 0.9)';
+            }
+        });
+    </script>
+</body>
+</html>
